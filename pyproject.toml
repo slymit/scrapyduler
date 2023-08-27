@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scrapyduler"
+authors = [
+    {name = "Dmitriy Chuenkov", email = "slymit@gmail.com"},
+]
+description = "Scrapyd launcher module that schedules scrapy spiders by time"
+readme = "README.rst"
+requires-python = ">=3.7"
+keywords = ["scrapy", "scrapyd", "scheduler", "launcher"]
+license = {text = "BSD-3-Clause"}
+classifiers = [
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Environment :: Console",
+    "Environment :: No Input/Output (Daemon)",
+    "Topic :: Internet :: WWW/HTTP",
+]
+dependencies = [
+    "scrapyd==1.4.2",
+    "APScheduler==3.10.1",
+    'importlib-metadata; python_version>="3.7"',
+]
+dynamic = ["version"]
