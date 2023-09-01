@@ -32,6 +32,9 @@ dependencies = [
 ]
 dynamic = ["version"]
 
+[project.urls]
+Homepage = "https://github.com/slymit/scrapyduler"
+
 [tool.setuptools.packages.find]
 include = ["scrapyduler"]
 namespaces = false
