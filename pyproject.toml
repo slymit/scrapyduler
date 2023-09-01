@@ -31,3 +31,10 @@ dependencies = [
     'importlib-metadata; python_version>="3.7"',
 ]
 dynamic = ["version"]
+
+[tool.setuptools.packages.find]
+include = ["scrapyduler"]
+namespaces = false
+
+[tool.setuptools.dynamic]
+version = {attr = "scrapyduler.__version__"}
