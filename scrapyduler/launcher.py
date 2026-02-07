@@ -2,7 +2,7 @@ import uuid
 from twisted.python import log
 from scrapyd.launcher import Launcher as ScrapydLauncher
 from scrapyd.interfaces import ISpiderScheduler
-from scrapyd.utils import get_spider_list
+from scrapyd.webservice import spider_list
 from scrapyd.config import Config
 from apscheduler.schedulers.twisted import TwistedScheduler
 from apscheduler.triggers.cron import CronTrigger
@@ -58,7 +58,7 @@ class Launcher(ScrapydLauncher):
         spider = kwargs.get('spider')
         version = kwargs.get('_version', '')
 
-        spiders = get_spider_list(project, version=version)
+        spiders = spider_list.get(project, version, runner=self.runner)
         if spider not in spiders:
             log.msg(format='spider %(spider)r not found', spider=spider, system='Scrapyduler')
             return
