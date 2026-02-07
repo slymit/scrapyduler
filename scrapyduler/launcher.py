@@ -24,6 +24,7 @@ class Launcher(ScrapydLauncher):
     def __init__(self, config: Config, app):
         super().__init__(config, app)
         self.scrapyd_scheduler = self.app.getComponent(ISpiderScheduler)
+        self._scheduler = TwistedScheduler()
 
         self.schedulers = []
         for section in config.cp.sections():
@@ -32,7 +33,6 @@ class Launcher(ScrapydLauncher):
 
     def startService(self):
         super().startService()
-        scheduler = TwistedScheduler()
         for item in self.schedulers:
             cron = item.get('cron', None)
             if cron is not None:
@@ -47,10 +47,10 @@ class Launcher(ScrapydLauncher):
             elif cron is not None and interval is not None:
                 raise ValueError("Only one parameter 'cron' or 'interval' must be set")
             elif cron:
-                scheduler.add_job(self.schedule_spider, cron, kwargs=item)
+                self._scheduler.add_job(self.schedule_spider, cron, kwargs=item)
             elif interval:
-                scheduler.add_job(self.schedule_spider, 'interval', **interval, kwargs=item)
-        scheduler.start()
+                self._scheduler.add_job(self.schedule_spider, 'interval', **interval, kwargs=item)
+        self._scheduler.start()
         log.msg(format='Scrapyduler launcher %(version)s started', version=__version__, system='Launcher')
 
     def schedule_spider(self, **kwargs):
