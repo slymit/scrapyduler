@@ -64,9 +64,9 @@ class Launcher(ScrapydLauncher):
             return
 
         priority = float(kwargs.get('priority', 0))
-        settings = kwargs.get('settings', [])
+        settings = kwargs.get('settings', '')
         settings = str_to_dict(settings)
-        args = kwargs.get('args', {})
+        args = kwargs.get('args', '')
         args = str_to_dict(args)
         args['settings'] = settings
         jobid = kwargs.get('jobid', uuid.uuid1().hex)
