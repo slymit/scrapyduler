@@ -8,7 +8,7 @@ authors = [
     {name = "Dmitriy Chuenkov", email = "slymit@gmail.com"},
 ]
 description = "Scrapyd launcher module that schedules scrapy spiders by time"
-readme = "README.rst"
+readme = "README.md"
 requires-python = ">=3.10"
 keywords = ["scrapy", "scrapyd", "scheduler", "launcher"]
 license = {text = "BSD-3-Clause"}
