@@ -18,5 +18,4 @@ test: lint
 	$(PYTHON) -m pytest tests $(ARGS)
 
 coverage: lint md-lint
-	$(PYTHON) -m coverage run --source $(PACKAGE) -m pytest tests $(ARGS)
-	$(PYTHON) -m coverage report --show-missing --fail-under 100
+	$(PYTHON) -m pytest --cov=$(PACKAGE) --cov-report=xml --cov-report=term-missing --cov-fail-under=100 tests $(ARGS)

@@ -38,7 +38,7 @@ Homepage = "https://github.com/slymit/scrapyduler"
 dev = [
     "pytest>=9.0.2",
     "pytest-mock>=3.15.1",
-    "coverage>=7.13.3",
+    "pytest-cov>=7.0.0",
     "ruff>=0.15.0",
     "mdformat>=1.0.0",
 ]
@@ -68,5 +68,4 @@ usedevelop = true
 extras = ["dev"]
 commands = [
     ["make", "coverage", "ARGS=-x -vv"],
-    ["python", "-m", "coverage", "xml"]
 ]
