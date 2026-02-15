@@ -67,5 +67,5 @@ allowlist_externals = ["make"]
 usedevelop = true
 extras = ["dev"]
 commands = [
-    ["make", "coverage", "ARGS=-x -vv"],
+    ["make", "coverage", "ARGS=--junitxml=junit.xml -o junit_family=legacy -x -vv"],
 ]
