@@ -1,5 +1,10 @@
 # scrapyduler
 
+[![version](https://img.shields.io/pypi/v/scrapyduler.svg)](https://pypi.python.org/pypi/scrapyduler)
+[![pyversions](https://img.shields.io/pypi/pyversions/scrapyduler.svg)](https://pypi.python.org/pypi/scrapyduler)
+[![actions](https://github.com/slymit/scrapyduler/actions/workflows/python-test.yml/badge.svg)](https://github.com/slymit/scrapyduler/actions/workflows/python-test.yml)
+[![codecov](https://codecov.io/github/slymit/scrapyduler/graph/badge.svg?token=H1SMMJ0JZ7)](https://codecov.io/github/slymit/scrapyduler)
+
 Scrapyd launcher module that schedules scrapy spiders by time.
 
 ## Install
